@@ -14,7 +14,7 @@ language sql
 stable
 set search_path = public
 as $$
-  select coalesce(lower(auth.jwt() ->> 'email') = lower('vedas4495@example.com'), false);
+  select coalesce(lower(auth.jwt() ->> 'email') = lower('admin@vedaschool.online'), false);
 $$;
 
 -- 2. Tables

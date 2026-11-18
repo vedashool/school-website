@@ -258,10 +258,11 @@
 
   $("loginForm").addEventListener("submit", function (e) {
     e.preventDefault();
-    var email = $("loginEmail").value.trim(), pw = $("loginPassword").value;
+    var username = $("loginEmail").value.trim().toLowerCase(), pw = $("loginPassword").value;
+    var email = username + "@vedaschool.online";
     setMsg($("loginMsg"), "");
     if (!configured()) { setMsg($("loginMsg"), "The website setup is not finished yet. Please contact your web developer.", "err"); return; }
-    if (!email || !pw) { setMsg($("loginMsg"), "Please type your email and password.", "err"); return; }
+    if (!username || !pw) { setMsg($("loginMsg"), "Please type your username and password.", "err"); return; }
 
     var btn = $("loginBtn");
     btn.disabled = true;
@@ -273,7 +274,7 @@
       var m;
       if (err instanceof TypeError) m = "There is no internet connection. Please check it and try again.";
       else if (err.status === 429) m = "Too many attempts. Please wait a few minutes and try again.";
-      else if (err.status === 400 || err.status === 401 || err.status === 422) m = "The email or password is not correct.";
+      else if (err.status === 400 || err.status === 401 || err.status === 422) m = "The username or password is not correct.";
       else m = "Could not sign in. Please try again.";
       setMsg($("loginMsg"), m, "err");
     }).then(function () {
