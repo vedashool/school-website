@@ -9,12 +9,12 @@ window.VEDA = {
   domain: "https://vedaschool.online",
 
   // NEEDS CLIENT CONFIRMATION: country code + number, digits only, e.g. "919876543210"
-  whatsapp: "91XXXXXXXXXX",
+  whatsapp: "919000588935",
   whatsappMessage: "Hello, I would like to know about admissions at Veda English Medium School.",
 
   // NEEDS CLIENT CONFIRMATION
-  phone: "+91XXXXXXXXXX",          // used for tap-to-call
-  phoneDisplay: "+91 XXXXX XXXXX", // shown on screen
+  phone: "+919000588935",          // used for tap-to-call
+  phoneDisplay: "+91 90005 88935", // shown on screen
   email: "",                        // NEEDS CLIENT CONFIRMATION (leave empty to hide)
 
   address: "Kovvada, Andhra Pradesh 533006, India", // NEEDS CLIENT CONFIRMATION (full street address)
