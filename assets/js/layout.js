@@ -65,6 +65,12 @@
           '<p><a href="' + mapsHref + '" target="_blank" rel="noopener">Find us on Google Maps</a></p>' +
         "</div>" +
       "</div>" +
+      '<div class="container footer-map">' +
+        "<h4>School Location</h4>" +
+        '<div class="footer-map-frame">' +
+          '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3816.1980959534735!2d82.19871997413131!3d16.96480351484342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3787ef9d8416ed%3A0xbbdd11f2371d39c0!2sVeda%20Concept%20School!5e0!3m2!1sen!2sin!4v1794985290101!5m2!1sen!2sin" title="Veda school location on Google Maps" width="600" height="450" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>' +
+        "</div>" +
+      "</div>" +
       '<div class="footer-bottom"><div class="container">' +
         "&copy; " + new Date().getFullYear() + " " + C.name + ". All rights reserved." +
       "</div></div>" +

@@ -14,7 +14,7 @@ contact.html          Admissions and Contact
 admin/                Admin panel (index.html, admin.css, admin.js)
 assets/css/           style.css (shared), gallery.css, pages.css
 assets/js/            config.js (ALL settings), layout.js, main.js, gallery.js, contact.js
-assets/img/           logo.png, favicon.png, hero.jpg, og.jpg, principal.jpg (optional)
+assets/img/           logo.png, favicon.png, school-campus-entrance.png, og.jpg, principal.jpg (optional)
 supabase/schema.sql   Database setup (run once)
 _headers              Security headers, keeps /admin out of Google
 robots.txt, sitemap.xml
@@ -131,8 +131,9 @@ Open any page with `?review` at the end to see these outlined in orange.
 | Where | What is needed |
 |---|---|
 | `assets/js/config.js` | WhatsApp number (with country code, digits only), phone, email (optional), full street address, days open, map latitude and longitude, Supabase URL and key |
+| `assets/js/layout.js` | Shared footer and Google Maps iframe shown on all public pages |
 | `assets/css/style.css` (`:root`) | Two colours picked to match the logo: `--primary` and `--accent`. Currently my own guess (deep blue and gold) because the logo was not visible when building |
-| `assets/img/` | `logo.png`, `favicon.png` (square), `hero.jpg` (about 1200x1000), `og.jpg` (1200x630). `principal.jpg` is optional |
+| `assets/img/` | `favicon.png` (square), `school-campus-entrance.png` (hero), `og.jpg` (1200x630). `principal.jpg` is optional |
 | `index.html` | Hero tagline (the client's Promise line is used, since no separate tagline was given). The welcome paragraph and the "Enquire About Admission" wording were written from the supplied facts only |
 | `about.html` | Principal's Message text, name and photo (generic placeholder now). Faculty section is left out until teacher details are provided |
 | `academics.html` | Board or syllabus, Facilities, Student Activities (generic copy built only from the Special Qualities list) |
