@@ -26,7 +26,7 @@
         "</a>" +
         '<nav class="main-nav" id="mainNav" aria-label="Main navigation"><ul>' + navItems + "</ul></nav>" +
         '<div class="header-actions">' +
-          '<a class="btn btn-primary btn-sm" href="contact.html#enquiry">Apply Now</a>' +
+          '<a class="btn btn-primary btn-sm" href="contact.html#admissions">Apply Now</a>' +
           '<button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mainNav" aria-label="Open menu">' +
             "<span></span><span></span><span></span>" +
           "</button>" +

@@ -78,6 +78,113 @@
     });
   }
 
+  /* ---------- Home photo carousel ---------- */
+  function initSchoolCarousel() {
+    var AUTOPLAY_DELAY_MS = 2000;
+    var carousel = document.getElementById("schoolCarousel");
+    var track = document.getElementById("schoolCarouselTrack");
+    if (!carousel || !track) return;
+
+    var slides = Array.prototype.slice.call(track.children);
+    var dots = Array.prototype.slice.call(carousel.querySelectorAll(".school-carousel-dot"));
+    var prev = carousel.querySelector("[data-carousel-prev]");
+    var next = carousel.querySelector("[data-carousel-next]");
+    if (slides.length < 2 || !prev || !next) return;
+
+    var total = slides.length;
+    var current = 0;
+    var timer = null;
+    var paused = false;
+    var inView = true;
+    var transitioning = false;
+
+    var clone = slides[0].cloneNode(true);
+    clone.setAttribute("aria-hidden", "true");
+    clone.querySelector("img").alt = "";
+    track.appendChild(clone);
+
+    function render(animate) {
+      transitioning = animate;
+      track.style.transition = animate ? "" : "none";
+      track.style.transform = "translate3d(-" + (current * 100) + "%, 0, 0)";
+      slides.forEach(function (slide, i) {
+        slide.setAttribute("aria-hidden", i === current ? "false" : "true");
+      });
+      dots.forEach(function (dot, i) {
+        if (i === current % total) dot.setAttribute("aria-current", "true");
+        else dot.removeAttribute("aria-current");
+      });
+
+      if (!animate) {
+        void track.offsetWidth;
+        track.style.transition = "";
+      }
+    }
+
+    function schedule() {
+      clearTimeout(timer);
+      if (reduceMotion || paused || !inView || document.hidden) return;
+      timer = setTimeout(function () {
+        current += 1;
+        render(true);
+        schedule();
+      }, AUTOPLAY_DELAY_MS);
+    }
+
+    function goTo(index) {
+      if (transitioning) return;
+      if (index === current) { schedule(); return; }
+      current = index;
+      render(true);
+      schedule();
+    }
+
+    track.addEventListener("transitionend", function (event) {
+      if (event.target !== track || event.propertyName !== "transform") return;
+      transitioning = false;
+      if (current !== total) return;
+      current = 0;
+      render(false);
+    });
+
+    prev.addEventListener("click", function () {
+      if (transitioning) return;
+      if (current === 0) {
+        current = total;
+        render(false);
+      }
+      current -= 1;
+      render(true);
+      schedule();
+    });
+    next.addEventListener("click", function () { goTo(current + 1); });
+    dots.forEach(function (dot, i) {
+      dot.addEventListener("click", function () { goTo(i); });
+    });
+
+    carousel.addEventListener("pointerenter", function (event) {
+      if (event.pointerType === "mouse") { paused = true; schedule(); }
+    });
+    carousel.addEventListener("pointerleave", function (event) {
+      if (event.pointerType === "mouse") { paused = false; schedule(); }
+    });
+    carousel.addEventListener("focusin", function () { paused = true; schedule(); });
+    carousel.addEventListener("focusout", function (event) {
+      if (!carousel.contains(event.relatedTarget)) { paused = false; schedule(); }
+    });
+    document.addEventListener("visibilitychange", schedule);
+
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(function (entries) {
+        inView = entries[0].isIntersecting;
+        schedule();
+      }, { threshold: 0.1 }).observe(carousel);
+    }
+
+    render(false);
+    schedule();
+  }
+
   /* ---------- Helpers: call + WhatsApp links ---------- */
   function initLinks() {
     document.querySelectorAll("[data-call]").forEach(function (a) { a.href = "tel:" + C.phone; });
@@ -92,5 +199,6 @@
   safe(initIntro);
   safe(initReveal);
   safe(initTransitions);
+  safe(initSchoolCarousel);
   safe(initLinks);
 })();

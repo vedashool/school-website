@@ -18,7 +18,7 @@
   var root = $("gallery");
   if (!root) return;
 
-  var tabsEl = $("galleryTabs"), stateEl = $("galleryState"), stage = $("galleryStage"),
+  var categoriesEl = $("galleryCategories"), stateEl = $("galleryState"), stage = $("galleryStage"),
       viewport = $("galleryViewport"), track = $("galleryTrack"),
       prevBtn = $("galleryPrev"), nextBtn = $("galleryNext"),
       dotsEl = $("galleryDots"), countEl = $("galleryCount"),
@@ -53,7 +53,6 @@
   function showState(msg, retry) {
     stopTimers();
     stage.hidden = true;
-    tabsEl.hidden = true;
     stateEl.hidden = false;
     stateEl.textContent = msg;
     if (retry) {
@@ -68,6 +67,8 @@
   }
 
   function load() {
+    categoriesEl.hidden = true;
+    categoriesEl.textContent = "";
     showState("Loading photos\u2026");
     if (!configured()) { showState("Photos will be added soon."); return; }
 
@@ -86,42 +87,93 @@
           alt: (cn ? cn + " \u2013 " : "") + "photo at Veda English Medium School"
         };
       });
-      if (!all.length) { showState("Photos will be added soon."); return; }
+      cats = catRows.map(function (c) {
+        var photos = all.filter(function (photo) { return photo.catId === c.id; });
+        return {
+          id: c.id,
+          name: c.name,
+          count: photos.length,
+          coverUrl: photos.length ? photos[0].url : ""
+        };
+      });
 
-      var used = {};
-      all.forEach(function (x) { used[x.catId] = 1; });
-      cats = catRows.filter(function (c) { return used[c.id]; }); // hide empty categories
+      renderCategories();
+      if (!all.length) { showState("Photos will be added soon."); return; }
 
       stateEl.hidden = true;
       stage.hidden = false;
-      renderTabs();
       build(all);
     }).catch(function () {
       showState("Photos could not be loaded right now. Please try again in a moment.", true);
     });
   }
 
-  /* ---------- Tabs ---------- */
-  function renderTabs() {
-    tabsEl.textContent = "";
-    tabsEl.hidden = cats.length === 0;
-    var list = [{ id: "all", name: "All" }].concat(cats);
-    list.forEach(function (c) {
+  /* ---------- Achievement category cards ---------- */
+  function renderCategories() {
+    categoriesEl.textContent = "";
+    var list = [{ id: "all", name: "All Photos", count: all.length }].concat(cats);
+    categoriesEl.hidden = cats.length === 0;
+    list.forEach(function (c, i) {
       var b = document.createElement("button");
       b.type = "button";
-      b.className = "g-tab";
-      b.textContent = c.name;
-      b.setAttribute("aria-pressed", c.id === "all" ? "true" : "false");
-      b.addEventListener("click", function () { select(c.id, b); });
-      tabsEl.appendChild(b);
+      b.className = "achievement-card achievement-color-" + (i % 4);
+      b.setAttribute("aria-pressed", i === 0 ? "true" : "false");
+
+      if (c.coverUrl) {
+        var cover = document.createElement("img");
+        cover.className = "achievement-cover";
+        cover.src = c.coverUrl;
+        cover.alt = "";
+        cover.loading = "lazy";
+        cover.decoding = "async";
+        b.appendChild(cover);
+      }
+
+      var shade = document.createElement("span");
+      shade.className = "achievement-shade";
+      shade.setAttribute("aria-hidden", "true");
+      b.appendChild(shade);
+
+      var mark = document.createElement("span");
+      mark.className = "achievement-mark";
+      mark.setAttribute("aria-hidden", "true");
+      mark.innerHTML = '<svg class="icon"><use href="#i-trophy"/></svg>';
+      b.appendChild(mark);
+
+      var name = document.createElement("span");
+      name.className = "achievement-name";
+      name.textContent = c.name;
+      b.appendChild(name);
+
+      var count = document.createElement("span");
+      count.className = "achievement-count";
+      count.textContent = c.count + (c.count === 1 ? " photo" : " photos");
+      b.appendChild(count);
+
+      b.addEventListener("click", function () { selectCategory(c.id); });
+      categoriesEl.appendChild(b);
     });
   }
 
-  function select(id, btn) {
-    Array.prototype.forEach.call(tabsEl.children, function (el) {
-      el.setAttribute("aria-pressed", el === btn ? "true" : "false");
+  function selectCategory(id) {
+    Array.prototype.forEach.call(categoriesEl.children, function (el, i) {
+      var selected = i === 0 ? id === "all" : cats[i - 1].id === id;
+      el.setAttribute("aria-pressed", selected ? "true" : "false");
     });
-    build(id === "all" ? all : all.filter(function (x) { return x.catId === id; }));
+    var list = id === "all" ? all : all.filter(function (x) { return x.catId === id; });
+    if (!list.length) {
+      stopTimers();
+      stage.hidden = true;
+      stateEl.hidden = false;
+      stateEl.textContent = "Photos for this category will be added soon.";
+      stateEl.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "nearest" });
+      return;
+    }
+
+    stateEl.hidden = true;
+    stage.hidden = false;
+    build(list);
+    stage.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "nearest" });
   }
 
   /* ---------- Slider ---------- */

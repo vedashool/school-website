@@ -53,7 +53,7 @@ Menu names in Supabase change from time to time. If something is not where this 
 
 | Who | Can do |
 |---|---|
-| Public visitors | Read categories and photos. Send an enquiry. Nothing else. |
+| Public visitors | Read categories and photos. Contact the school by phone or WhatsApp. |
 | The admin (the one email in `is_admin`) | Add, change and delete photos and categories. Upload and delete image files. Read enquiries. |
 
 Even if someone finds `/admin`, they cannot change anything without the admin login,
@@ -146,7 +146,7 @@ Open any page with `?review` at the end to see these outlined in orange.
 - Only the public anon/publishable key is in the website code. No secret key anywhere.
 - Sign-ups are disabled and the database only trusts one admin email.
 - `/admin` has `noindex`, so search engines skip it. It is not linked from the public pages.
-- The enquiry form has a hidden spam trap, a minimum fill time, a per-browser limit and database-level limits.
+- The contact page provides phone and WhatsApp links; it does not collect enquiry details through a form.
 
 ## 9. Handing over to the client
 
@@ -162,5 +162,4 @@ Give the staff the admin email, the password and the `/admin` address, and the s
 | Gallery says "Photos could not be loaded" | Wrong URL or key, SQL not run, or the Supabase project is paused |
 | Sign in says email or password is not correct | The user was not created, or "Auto Confirm User" was not ticked |
 | Upload fails with "not allowed" | The email in `is_admin()` does not match the admin's email. Edit it in the SQL and run the script again |
-| Enquiry form says it cannot send | Keys missing, SQL not run, or the rate limit was reached |
-| Map shows a message instead of a map | `mapLat` and `mapLng` are still empty in `config.js` |
+| Google Maps link opens a general area | Add the exact `mapLat` and `mapLng` coordinates in `config.js` |

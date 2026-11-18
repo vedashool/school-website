@@ -6,7 +6,7 @@
   <title>Admissions and Contact | Veda English Medium School, Kovvada</title>
   <meta name="description" content="Enquire about admission to Veda English Medium School in Kovvada, Andhra Pradesh. Find our address, phone, timings and map location.">
   <link rel="canonical" href="https://vedaschool.online/contact">
-  <meta name="theme-color" content="#1F3A5F">
+  <meta name="theme-color" content="#A50058">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Veda English Medium School">
@@ -74,98 +74,34 @@
       </div>
     </section>
 
-    <!-- ADMISSIONS + ENQUIRY FORM -->
+    <!-- ADMISSIONS -->
     <section class="section" id="admissions">
       <div class="container">
         <div class="section-head reveal">
           <span class="eyebrow">Admissions</span>
           <h2>Admissions for Nursery to 10th Class</h2>
-          <p>Send us an enquiry and the school will get in touch. You can also call us or message us on WhatsApp.</p>
+          <p>Call or message us on WhatsApp to learn about admissions and speak with the school team.</p>
         </div>
 
-        <div class="adm-grid">
-          <div class="reveal">
-            <!-- NEEDS CLIENT CONFIRMATION: general admission steps, to be checked with the school -->
-            <ol class="steps" data-confirm>
-              <li>
-                <h3>Send an enquiry</h3>
-                <p>Fill in the form, call us, or message us on WhatsApp.</p>
-              </li>
-              <li>
-                <h3>Talk to the school</h3>
-                <p>The school team will share admission details with you.</p>
-              </li>
-              <li>
-                <h3>Visit the school</h3>
-                <p>Come and see the school during school timings.</p>
-              </li>
-            </ol>
-            <div class="adm-actions">
-              <a class="btn btn-primary" href="#" data-wa>Chat on WhatsApp</a>
-              <a class="btn btn-outline" href="tel:+919000588935" data-call>Call: 9000588935</a>
-            </div>
-          </div>
-
-          <div class="enq-card reveal" id="enquiry">
-            <h3>Send an Enquiry</h3>
-
-            <div class="enq-done" id="enqDone" hidden tabindex="-1">
-              <div class="tick">
-                <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
-              </div>
-              <h3>Thank you</h3>
-              <p>Your enquiry has been sent. The school will be in touch with you soon.</p>
-              <button class="btn btn-outline btn-sm" type="button" id="enqAgain">Send another enquiry</button>
-            </div>
-
-            <form class="enq-form" id="enquiryForm" novalidate>
-              <div class="form-status err" id="enqStatus" role="alert" hidden></div>
-
-              <div class="field">
-                <label for="parentName">Parent's name</label>
-                <input id="parentName" name="parent_name" type="text" autocomplete="name" maxlength="80" required aria-describedby="parentNameErr">
-                <p class="field-error" id="parentNameErr"></p>
-              </div>
-
-              <div class="field">
-                <label for="phone">Phone number</label>
-                <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="20" required aria-describedby="phoneErr">
-                <p class="field-error" id="phoneErr"></p>
-              </div>
-
-              <div class="field">
-                <label for="classInterest">Class interested in</label>
-                <select id="classInterest" name="class_interest" required aria-describedby="classInterestErr">
-                  <option value="">Choose a class</option>
-                  <option>Nursery</option>
-                  <option>Class 1</option>
-                  <option>Class 2</option>
-                  <option>Class 3</option>
-                  <option>Class 4</option>
-                  <option>Class 5</option>
-                  <option>Class 6</option>
-                  <option>Class 7</option>
-                  <option>Class 8</option>
-                  <option>Class 9</option>
-                  <option>Class 10</option>
-                </select>
-                <p class="field-error" id="classInterestErr"></p>
-              </div>
-
-              <div class="field">
-                <label for="message">Message <small>(optional)</small></label>
-                <textarea id="message" name="message" maxlength="1000"></textarea>
-              </div>
-
-              <!-- Spam trap: hidden from people, bots tend to fill it -->
-              <div class="hp" aria-hidden="true">
-                <label for="company_url">Leave this field empty</label>
-                <input id="company_url" name="company_url" type="text" tabindex="-1" autocomplete="off">
-              </div>
-
-              <button class="btn btn-primary" type="submit" id="enqSubmit">Send Enquiry</button>
-              <p class="form-note">We use your details only to reply to your enquiry.</p>
-            </form>
+        <div class="adm-content reveal">
+          <!-- NEEDS CLIENT CONFIRMATION: general admission steps, to be checked with the school -->
+          <ol class="steps" data-confirm>
+            <li>
+              <h3>Contact the school</h3>
+              <p>Call us or message us on WhatsApp to ask about admission.</p>
+            </li>
+            <li>
+              <h3>Talk to the school</h3>
+              <p>The school team will share admission details with you.</p>
+            </li>
+            <li>
+              <h3>Visit the school</h3>
+              <p>Come and see the school during school timings.</p>
+            </li>
+          </ol>
+          <div class="adm-actions">
+            <a class="btn btn-primary" href="#" data-wa>Chat on WhatsApp</a>
+            <a class="btn btn-outline" href="tel:+919000588935" data-call>Call: 9000588935</a>
           </div>
         </div>
       </div>
@@ -200,20 +136,6 @@
             <div><h3>Open</h3><p id="cDays"></p></div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- MAP: exact pin from the coordinates in config.js. Last section, directly above the footer. -->
-    <section class="section" id="map">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="eyebrow">Find Us</span>
-          <h2>Our Location</h2>
-        </div>
-        <div class="map-box reveal" id="mapBox">
-          <p class="map-note" id="mapNote">The map will appear here once the school's exact location is added.</p>
-        </div>
-        <p class="map-link"><a class="btn btn-outline btn-sm" id="mapLink" href="#" target="_blank" rel="noopener" hidden>Open in Google Maps</a></p>
       </div>
     </section>
 

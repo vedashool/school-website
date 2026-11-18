@@ -20,7 +20,7 @@ window.VEDA = {
   openDays: "",                     // NEEDS CLIENT CONFIRMATION, e.g. "Monday to Saturday" (leave empty to hide)
 
   // NEEDS CLIENT CONFIRMATION: exact pin coordinates, e.g. mapLat: "16.9891", mapLng: "82.2475"
-  // Leave empty until known. The map on the Contact page appears automatically once both are filled.
+  // The shared Google Maps link uses these coordinates when both are provided.
   mapLat: "",
   mapLng: "",
 
