@@ -223,7 +223,7 @@ body[data-page="home"] { background: #fff; }
 .hero-ribbon { padding: .65rem 1rem; background: linear-gradient(90deg, #173b83, #2453bc); color: #fff; text-align: center; font-size: .82rem; font-weight: 700; letter-spacing: .045em; }
 .hero-ribbon span { padding: 0 .45rem; color: var(--accent); }
 .hero-artwork { width: 100%; max-height: 620px; overflow: hidden; background: #eef4fa; }
-.hero-artwork img { width: 100%; height: clamp(280px, 48vw, 620px); object-fit: cover; object-position: center; }
+.hero-artwork img { width: 100%; height: clamp(280px, 48vw, 620px); object-fit: contain; object-position: center; }
 .home-hero .hero-grid { min-height: 0; grid-template-columns: 1fr; align-items: center; padding-top: clamp(2.4rem, 5vw, 4.2rem); }
 .home-hero .hero-copy { max-width: 620px; }
 .home-hero .eyebrow { color: var(--primary); }
@@ -292,30 +292,33 @@ body[data-page="home"] { background: #fff; }
 .achievement-color-3 { background: linear-gradient(145deg, #2453bc, #50d9ff); }
 @media (min-width: 700px) { .achievement-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; } .achievement-card { min-height: 220px; } }
 
-.smart-school { overflow: hidden; background: linear-gradient(120deg, #eefaff, #fff 58%, #f0edff); }
-.smart-school-grid { display: grid; gap: 2rem; align-items: center; }
-.smart-school-copy h2 { margin-bottom: .8rem; color: var(--primary-dark); font-size: clamp(2rem, 5vw, 3rem); text-transform: uppercase; }
-.smart-school-copy > p { max-width: 34rem; color: var(--muted); font-size: 1.05rem; }
-.smart-feature-list { display: grid; gap: .7rem; margin-top: 1.4rem; }
-.smart-feature-list li { display: flex; align-items: center; gap: .75rem; color: var(--primary-dark); font-weight: 600; }
-.smart-feature-list .icon { width: 34px; height: 34px; flex: none; padding: 7px; border-radius: 10px; background: #eaf2ff; color: var(--primary); }
-.smart-visual { position: relative; min-height: 350px; display: grid; place-items: center; padding: 2rem 1rem; overflow: hidden; border-radius: 28px; background: radial-gradient(circle at 75% 15%, #50d9ff 0, transparent 26%), linear-gradient(145deg, #142d80, #136cd0 58%, #4fd3e9); box-shadow: var(--shadow); }
+.smart-school { overflow: hidden; background: linear-gradient(120deg, #fff6d8, #fff 52%, #edf4ff); }
+.smart-school-grid { display: grid; gap: 2.2rem; align-items: center; padding: clamp(1.4rem, 4vw, 2.8rem); border: 2px solid rgba(255, 211, 49, .72); border-radius: 28px; background: linear-gradient(135deg, #173b83 0%, #2453bc 58%, #318ac5 100%); box-shadow: 0 20px 48px rgba(23, 59, 131, .28), 0 0 0 8px rgba(255, 211, 49, .12); }
+.smart-school-copy .eyebrow { color: #ffe15a; }
+.smart-school-copy h2 { margin-bottom: .8rem; color: #fff; font-size: clamp(2rem, 5vw, 3rem); text-transform: uppercase; }
+.smart-school-copy > p { max-width: 34rem; color: rgba(255, 255, 255, .88); font-size: 1.05rem; }
+.smart-feature-list { display: grid; grid-template-columns: 1fr; gap: .65rem; margin-top: 1.4rem; }
+.smart-feature-list li { min-height: 58px; display: flex; align-items: center; gap: .75rem; padding: .7rem .85rem; color: var(--primary-dark); font-weight: 700; background: rgba(255, 255, 255, .82); border: 1px solid rgba(36, 83, 188, .1); border-radius: 14px; box-shadow: 0 6px 18px rgba(33, 22, 95, .06); }
+.smart-feature-list .icon { width: 36px; height: 36px; flex: none; padding: 8px; border-radius: 10px; background: #eaf2ff; color: var(--primary); }
+.smart-visual { position: relative; min-height: 350px; display: grid; place-items: center; padding: 2.4rem 1.2rem; overflow: hidden; border-radius: 28px; background: radial-gradient(circle at 75% 15%, #50d9ff 0, transparent 26%), linear-gradient(145deg, #142d80, #136cd0 58%, #4fd3e9); box-shadow: var(--shadow); }
 .smart-visual::before, .smart-visual::after { content: ""; position: absolute; width: 210px; height: 210px; border: 1px solid rgba(255, 255, 255, .27); border-radius: 50%; }
 .smart-visual::before { top: -110px; right: -40px; }
 .smart-visual::after { bottom: -150px; left: -60px; width: 300px; height: 300px; }
-.smart-device { position: relative; z-index: 1; width: min(100%, 310px); padding: 10px; border: 3px solid #29334a; border-radius: 22px; background: #f7f8ff; box-shadow: 0 20px 45px rgba(8, 20, 70, .35); transform: rotate(-2deg); }
+.smart-device { position: relative; z-index: 1; width: min(100%, 310px); padding: 10px; border: 0; border-radius: 22px; background: #f7f8ff; box-shadow: 0 20px 45px rgba(8, 20, 70, .35); }
 .smart-device-top { height: 14px; display: flex; justify-content: center; gap: 5px; }
 .smart-device-top span { width: 4px; height: 4px; border-radius: 50%; background: #8790a3; }
 .smart-screen { min-height: 260px; padding: 1.2rem; display: flex; flex-direction: column; border-radius: 12px; background: linear-gradient(155deg, #fff, #edf5ff); }
 .smart-screen-kicker { color: var(--primary); font-size: .65rem; font-weight: 800; letter-spacing: .13em; }
 .smart-screen-title { margin: .65rem 0; color: var(--primary-dark); font: 700 1.55rem/1.15 var(--font-head); }
 .smart-screen-line { width: 100%; height: 1px; margin: .2rem 0 .7rem; background: #d6deed; }
-.smart-screen-row { padding: .48rem 0; display: flex; align-items: center; gap: .65rem; color: #45445b; font-size: .82rem; font-weight: 600; }
+.smart-screen-row { padding: .42rem .45rem; display: flex; align-items: center; gap: .65rem; color: #45445b; font-size: .82rem; font-weight: 600; border-bottom: 1px solid #dfe7f3; }
+.smart-screen-row:last-child { border-bottom: 0; }
 .smart-screen-row span { width: 25px; height: 25px; display: grid; place-items: center; border-radius: 8px; background: #e9f4ed; color: #20824a; font-size: .7rem; }
 .smart-spark { position: absolute; z-index: 1; color: #ffe354; font-size: 3rem; line-height: 1; }
 .smart-spark-one { top: 16%; left: 17%; }
 .smart-spark-two { right: 14%; bottom: 17%; font-size: 4rem; color: #fff; }
-@media (min-width: 820px) { .smart-school-grid { grid-template-columns: 1fr 1fr; gap: 3.5rem; } .smart-visual { min-height: 440px; } }
+@media (min-width: 600px) { .smart-feature-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 820px) { .smart-school-grid { grid-template-columns: minmax(0, 1fr) minmax(0, .88fr); gap: 3.5rem; } .smart-visual { min-height: 440px; } }
 
 .home-cta { position: relative; overflow: hidden; background: linear-gradient(120deg, #173b83, #2453bc 60%, #318ac5); }
 .home-cta::before, .home-cta::after { content: ""; position: absolute; width: 220px; height: 220px; border: 1px solid rgba(255, 255, 255, .17); border-radius: 50%; }
