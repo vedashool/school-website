@@ -213,8 +213,8 @@
     n = list.length;
     idx = 0;
     busy = false;
-    p = perView();
-    sliding = n > p;
+    p = Math.min(perView(), n);
+    sliding = n > 1;
 
     track.textContent = "";
     var frag = document.createDocumentFragment();

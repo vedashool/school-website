@@ -9,7 +9,7 @@ window.VEDA = {
   domain: "https://vedaschool.online",
 
   whatsapp: "919000588935",
-  whatsappMessage: "Hello, I would like to know about admissions at Veda English Medium School.",
+  whatsappMessage: "Hello, I would like to know about admissions at Veda English Medium School Kovvada",
 
   phone: "+919000588935",          // used for tap-to-call
   phoneDisplay: "+91 9000588935", // shown on screen

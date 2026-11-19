@@ -61,6 +61,6 @@ html.review [data-confirm]::after {
 /* ---------- Contact details ---------- */
 .contact-grid { display: grid; gap: 1.1rem; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
 .c-card { display: flex; gap: 1rem; align-items: flex-start; background: #fff; border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow-sm); }
-.c-card .icon-wrap { flex: none; width: 48px; height: 48px; border-radius: 14px; display: grid; place-items: center; background: rgba(165, 0, 88, .08); color: var(--primary); }
+.c-card .icon-wrap { flex: none; width: 48px; height: 48px; border-radius: 14px; display: grid; place-items: center; background: rgba(36, 83, 188, .08); color: var(--primary); }
 .c-card h3 { font-size: 1.05rem; margin-bottom: .25rem; }
 .c-card p { margin: 0; color: var(--muted); overflow-wrap: anywhere; }
