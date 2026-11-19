@@ -6,9 +6,10 @@
 
   var links = [
     { id: "home",      label: "Home",                    href: "index.html" },
-    { id: "about",     label: "About",                   href: "about.html" },
+    { id: "about",     label: "About Our School",        href: "about.html" },
+    { id: "vision",    label: "Vision and Mission",      href: "about.html#vision-mission" },
     { id: "academics", label: "Academics",               href: "academics.html" },
-    { id: "contact",   label: "Admissions and Contact",  href: "contact.html" },
+    { id: "contact",   label: "Admissions",              href: "contact.html#admissions" },
     { id: "gallery",   label: "Gallery",                 href: "index.html#gallery" }
   ];
 
