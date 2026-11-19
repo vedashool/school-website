@@ -42,6 +42,7 @@ html.review [data-confirm]::after {
 .prin-msg p { color: #40516b; font-size: 1.05rem; }
 .prin-sign { margin-top: 1.4rem; padding: .9rem 1.1rem; border-radius: 18px; background: linear-gradient(90deg, #173b83, #2453bc); font-family: var(--font-head); font-size: 1.15rem; font-weight: 600; color: #fff; }
 .prin-sign small { display: block; margin-top: .15rem; font-family: var(--font-body); font-weight: 400; font-size: .9rem; color: #fff7c2; }
+.prin-sign small a { color: inherit; text-decoration: underline; }
 @media (min-width: 820px) { .prin-card { grid-template-columns: 260px 1fr; gap: 3rem; } .prin-photo { width: 100%; } }
 
 /* ---------- Academics: feature cards (reuse .q-card look) ---------- */

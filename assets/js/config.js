@@ -13,6 +13,8 @@ window.VEDA = {
 
   phone: "+917981934343",          // used for tap-to-call
   phoneDisplay: "+91 7981934343", // shown on screen
+  phone2: "+919000588935",
+  phone2Display: "+91 9000588935",
   email: "",                        // NEEDS CLIENT CONFIRMATION (leave empty to hide)
 
   address: "Kovvada, Andhra Pradesh 533006, India", // NEEDS CLIENT CONFIRMATION (full street address)

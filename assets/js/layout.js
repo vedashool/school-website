@@ -58,6 +58,7 @@
           "<h4>Visit and Call</h4>" +
           "<p>" + C.address + "</p>" +
           '<p><a href="tel:' + C.phone + '">' + C.phoneDisplay + "</a></p>" +
+          '<p><a href="tel:' + C.phone2 + '">' + C.phone2Display + "</a></p>" +
           (C.email ? '<p><a href="mailto:' + C.email + '">' + C.email + "</a></p>" : "") +
         "</div>" +
         '<div class="footer-col">' +
