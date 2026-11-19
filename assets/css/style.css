@@ -222,8 +222,8 @@ body[data-page="home"] { background: #fff; }
 .home-hero { min-height: 0; padding: 0 0 clamp(2.6rem, 6vw, 4.5rem); background: #fff; }
 .hero-ribbon { padding: .65rem 1rem; background: linear-gradient(90deg, #173b83, #2453bc); color: #fff; text-align: center; font-size: .82rem; font-weight: 700; letter-spacing: .045em; }
 .hero-ribbon span { padding: 0 .45rem; color: var(--accent); }
-.hero-artwork { width: 100%; max-height: 620px; overflow: hidden; background: #eef4fa; }
-.hero-artwork img { width: 100%; height: clamp(280px, 48vw, 620px); object-fit: contain; object-position: center; }
+.hero-artwork { width: 100%; max-height: 620px; overflow: hidden; display: grid; place-items: center; background: #eef4fa; }
+.hero-artwork img { width: min(100%, 900px); height: auto; object-fit: contain; object-position: center; }
 .home-hero .hero-grid { min-height: 0; grid-template-columns: 1fr; align-items: center; padding-top: clamp(2.4rem, 5vw, 4.2rem); }
 .home-hero .hero-copy { max-width: 620px; }
 .home-hero .eyebrow { color: var(--primary); }
