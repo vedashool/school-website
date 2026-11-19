@@ -11,8 +11,8 @@ window.VEDA = {
   whatsapp: "919000588935",
   whatsappMessage: "Hello, I would like to know about admissions at Veda English Medium School Kovvada",
 
-  phone: "+919000588935",          // used for tap-to-call
-  phoneDisplay: "+91 9000588935", // shown on screen
+  phone: "+917981934343",          // used for tap-to-call
+  phoneDisplay: "+91 7981934343", // shown on screen
   email: "",                        // NEEDS CLIENT CONFIRMATION (leave empty to hide)
 
   address: "Kovvada, Andhra Pradesh 533006, India", // NEEDS CLIENT CONFIRMATION (full street address)
