@@ -30,14 +30,18 @@ html.review [data-confirm]::after {
 @media (min-width: 900px) { .about-grid { grid-template-columns: 1.3fr 1fr; gap: 3.5rem; } }
 
 /* ---------- Principal's message ---------- */
-.prin-card { display: grid; gap: 2rem; align-items: center; background: #fff; border-radius: 28px; padding: clamp(1.6rem, 4vw, 3rem); box-shadow: var(--shadow); }
-.prin-photo { position: relative; width: min(240px, 70%); aspect-ratio: 4 / 5; margin: 0 auto; border-radius: 22px; overflow: hidden; display: grid; place-items: center; color: var(--primary); background: linear-gradient(135deg, #EADFC7, #D6E0EE); }
+.principal-section { margin: clamp(1rem, 3vw, 2rem) clamp(.5rem, 2vw, 1.25rem); border-radius: 44px; background: linear-gradient(135deg, #dcecff 0%, #edf7ff 48%, #dff3ea 100%); border: 1px solid #cadcf2; box-shadow: inset 0 0 0 8px rgba(255, 255, 255, .35); }
+.principal-section .section-head h2 { color: var(--primary-dark); }
+.principal-section .eyebrow { color: #177b68; }
+.prin-card { display: grid; gap: 2rem; align-items: center; background: linear-gradient(145deg, #fff 0%, #fffaf0 55%, #edf4ff 100%); border: 2px solid #dce7f7; border-radius: 40px; padding: clamp(1.6rem, 4vw, 3rem); box-shadow: 0 18px 45px rgba(23, 59, 131, .16); }
+.prin-photo { position: relative; width: min(240px, 70%); aspect-ratio: 4 / 5; margin: 0 auto; border: 4px solid #fff; border-radius: 32px; overflow: hidden; display: grid; place-items: center; color: var(--primary); background: linear-gradient(135deg, #EADFC7, #D6E0EE); box-shadow: 0 12px 28px rgba(23, 59, 131, .18); }
 .prin-photo svg { width: 38%; height: auto; opacity: .5; fill: none; stroke: currentColor; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
 .prin-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.prin-msg h3 { font-size: 1.7rem; }
-.prin-msg p { color: var(--muted); font-size: 1.05rem; }
-.prin-sign { margin-top: 1.4rem; font-family: var(--font-head); font-size: 1.15rem; font-weight: 600; color: var(--primary-dark); }
-.prin-sign small { display: block; font-family: var(--font-body); font-weight: 400; font-size: .9rem; color: var(--muted); }
+.prin-msg { border-left: 5px solid var(--accent); border-radius: 0 24px 24px 0; padding: 1.2rem 1.4rem; background: rgba(255, 255, 255, .82); }
+.prin-msg h3 { font-size: 1.7rem; color: var(--primary-dark); }
+.prin-msg p { color: #40516b; font-size: 1.05rem; }
+.prin-sign { margin-top: 1.4rem; padding: .9rem 1.1rem; border-radius: 18px; background: linear-gradient(90deg, #173b83, #2453bc); font-family: var(--font-head); font-size: 1.15rem; font-weight: 600; color: #fff; }
+.prin-sign small { display: block; margin-top: .15rem; font-family: var(--font-body); font-weight: 400; font-size: .9rem; color: #fff7c2; }
 @media (min-width: 820px) { .prin-card { grid-template-columns: 260px 1fr; gap: 3rem; } .prin-photo { width: 100%; } }
 
 /* ---------- Academics: feature cards (reuse .q-card look) ---------- */
