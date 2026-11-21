@@ -7,6 +7,8 @@ window.VEDA = {
   name: "Veda English Medium School",
   shortName: "Veda",
   domain: "https://vedaschool.online",
+  youtube: "https://www.youtube.com/channel/UCTKdRt4jhvRy4MYjoSmTpAQ",
+  instagram: "https://www.instagram.com/anandvelugubantla/",
 
   whatsapp: "919000588935",
   whatsappMessage: "Hello, I would like to know about admissions at Veda English Medium School Kovvada",

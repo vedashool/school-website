@@ -17,6 +17,9 @@
     var current = l.id === page ? ' aria-current="page" class="active"' : "";
     return '<li><a href="' + l.href + '"' + current + ">" + l.label + "</a></li>";
   }).join("");
+  navItems +=
+    '<li><a class="nav-social-link" href="' + C.youtube + '" target="_blank" rel="noopener noreferrer" aria-label="Veda English Medium School on YouTube"><img src="assets/img/youtube.png" alt="" width="32" height="32"></a></li>' +
+    '<li><a class="nav-social-link" href="' + C.instagram + '" target="_blank" rel="noopener noreferrer" aria-label="Veda English Medium School on Instagram"><img src="assets/img/instagram.jpg" alt="" width="32" height="32"></a></li>';
 
   var header =
     '<header class="site-header" id="siteHeader">' +
@@ -65,6 +68,11 @@
           "<h4>School Timings</h4>" +
           "<p>" + C.timings + "</p>" +
           '<p><a href="' + mapsHref + '" target="_blank" rel="noopener">Find us on Google Maps</a></p>' +
+          '<h4>Follow Us</h4>' +
+          '<div class="footer-social">' +
+            '<a href="' + C.youtube + '" target="_blank" rel="noopener noreferrer" aria-label="Veda English Medium School on YouTube"><img src="assets/img/youtube.png" alt="" width="40" height="40"></a>' +
+            '<a href="' + C.instagram + '" target="_blank" rel="noopener noreferrer" aria-label="Veda English Medium School on Instagram"><img src="assets/img/instagram.jpg" alt="" width="40" height="40"></a>' +
+          "</div>" +
         "</div>" +
       "</div>" +
       '<div class="container footer-map">' +
@@ -106,7 +114,7 @@
     setOpen(!hdr.classList.contains("nav-open"));
   });
   document.getElementById("mainNav").addEventListener("click", function (e) {
-    if (e.target.tagName === "A") setOpen(false);
+    if (e.target.closest && e.target.closest("a")) setOpen(false);
   });
   document.addEventListener("keydown", function (e) {
     if (e.key === "Escape") setOpen(false);
